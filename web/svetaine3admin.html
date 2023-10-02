@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filmai</title>
+    <style>
+
+body {
+            background-color: lightskyblue;
+            
+            
+        }
+        
+        .div1 {
+        
+        background-color: transparent;
+        color: white;
+        display: inline-block;
+        
+        }
+         
+        
+        .ieskotiFilmu {
+        
+        margin-left: 400px;
+        margin-top: 20px;
+        position: relative;
+        
+        
+        }
+        div {
+            display: inline-block;
+            position: absolute;
+        }
+        
+        .ieskotiInput {
+
+            height: 30px;
+            width: 300px;
+            border-color:white;
+            border-style: solid;
+            color: white;
+
+        }
+
+        input {
+            background-color:transparent
+        }
+
+        input::placeholder {
+            font-size: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+
+        }
+      
+
+        .ieskotiButton {
+            height: 35px;
+            width: 120px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+        }
+
+        .atsijungtiButton {
+            height: 35px;
+            width: 90px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+            margin-left: -150px;
+            margin-right: 200px;
+        }
+
+        .atsijungtiButton:active {
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+        }
+
+        .ieskotiButton:active {
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+           
+        }
+
+        
+
+        .filmuPav {
+
+            margin-top: 230px;
+            color: white;
+            background-color: blue;
+            border-width: 4px;
+            border-style: solid;
+            margin-left: 300px;
+            
+        
+        }
+
+        .table {
+            margin-left: 10px;
+            text-align: left;
+        }
+        
+        .atsiliepimai {
+            color: white;
+            text-align: center;
+            margin-top: 700px
+            
+          
+
+        }
+
+        option {
+            color:black;
+        }
+
+        
+        .pasirinktiButton {
+
+            height: 30px;
+            width: 120px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+
+
+        }
+
+        .pasirinktiButton:active {
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+        }
+
+        .adminClass {
+
+            justify-content: center;
+            padding-right: 75px;
+            margin-left: 300px;
+            color: white;
+            background-color: blue;
+            border-width: 4px;
+            margin-top: 450px;
+            
+
+        }
+
+        input{
+    color: #ffffff;
+}
+         .PridetiFilmaButton {
+
+             height: 25px;
+             font-size: 15px;
+            width: 90px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+
+}
+
+
+        .PridetiFilmaButton:active {
+
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+
+
+        }
+
+
+
+.inputTextBox[type="text"], textarea {
+
+    background-color: darkblue;
+    
+
+}
+
+        
+
+        
+            </style>
+</head>
+<body>
+
+
+
+
+<div>
+<div class="div1">
+    <h1 class="textanimation"> <u>Sveiki, admin</u></h1>
+</div>
+
+<div class="ieskotiFilmu">
+    <button onclick="atsijungti()" class="atsijungtiButton">Atsijungti</button>  
+    <input id="inputFilmas" class="ieskotiInput" placeholder="Ieskoti filmu" type="text">
+    <button onclick="tikrinti()" id="tikrintiButton" class="ieskotiButton" type="submit"> <strong>Ieskoti</strong></button>
+    
+    
+    
+    </div>
+    </div>
+
+<div class="filmuPav">
+    <p style="margin-left: 20px;font-size: 18px;"> <strong>Top 5 Geriausiu siu metu siaubo filmu(is imdb) </strong></p>
+    <table class="table" id="addFilmai">
+    <tr  id="tr1">
+        <th style=" font-size: 20px; color: white">
+          Filmas 1 su n1   reitingu
+        </th>
+    </tr>
+    <tr id="tr2">
+        <th style=" font-size: 20px; color: white">
+             Filmas 2 su n2  reitingu
+        </th>
+    </tr>
+    <tr id="tr3">
+        <th style=" font-size: 20px; color: white">
+             Filmas 3 su n3  reitingu
+        </th>
+    </tr>
+    <tr id="tr4">
+        <th style=" font-size: 20px; color: white">
+             Filmas 4 su n4  reitingu
+        </th>
+    </tr>
+
+    <tr id="tr5">
+        <th style=" font-size: 20px; color: white">
+             Filmas 5 su n5  reitingu
+        </th>
+    </tr>
+        
+    </table>
+
+    <h1>(admin) Prideti filma: </h1>
+    <input class="inputTextBox" id="inputFilmas" style="margin-bottom: 10px;" placeholder="" type="text">
+    <button type="button" onclick="addFilm()" class="PridetiFilmaButton">Prideti</button>
+    <h1>(admin) Ištrinti filma:</h1>
+    <input class="inputTextBox" id="inputFilmasDel" style="margin-bottom: 10px;" placeholder="" type="text"> 
+    <button type="button" onclick="deleteFilm()" class="PridetiFilmaButton">Istrinti</button>
+</div>
+
+
+
+<script>
+
+function addFilm() {
+
+    var table = document.getElementById("addFilmai");
+    var row = table.insertRow(5);
+        var input = document.getElementsByTagName('input');
+            for(var i = 0, l = input.length; i < l; i++){
+            var cell = row.insertCell(i);
+               cell.innerHTML = input[i].value;
+               cell.style.color = "white";
+               cell.style.fontSize = "20px";
+
+
+            }
+
+}
+
+
+function deleteFilm() {
+
+
+    const inputMain = document.getElementById('inputFilmasDel').value;
+
+  
+    if  ( inputMain == "n10" || inputMain == "n10" || inputMain == "2" ) {
+        document.getElementById("addFilmai").deleteRow(1);
+    }
+    
+     
+    else if  ( inputMain == "n20" || inputMain == "n20" || inputMain == "n02" || inputMain == "1"   ) {
+        document.getElementById("addFilmai").deleteRow(0);
+    }
+
+    else if  ( inputMain == "n30" || inputMain == "n30" || inputMain == "3" ) {
+        document.getElementById("addFilmai").deleteRow(2);
+    }
+
+    else if  ( inputMain == "n40" || inputMain == "n40" || inputMain == "4" ) {
+        document.getElementById("addFilmai").deleteRow(3);
+    }
+    
+    else if  ( inputMain == "n50" || inputMain == "n50" || inputMain == "5" ) {
+        document.getElementById("addFilmai").deleteRow(4);
+    }
+
+    else (
+        alert("Tokio filmo nera!")
+    )
+
+}
+
+
+
+function tikrinti() {
+
+const Filmas = document.getElementById('inputFilmas').value;
+const mgtk = document.getElementById('tikrintiButton').value;
+
+if ( Filmas == "n10" || Filmas == "n10") {
+            window.location = "n10.html";
+            return false;
+        }
+
+else if ( Filmas == "n20" || Filmas == "n20" ) {
+            window.location = "n20.html";
+            return false;
+}
+
+else if (Filmas == "n30" || Filmas == "n30") {
+            window.location = "n30.html";
+            return false;
+}
+
+else if (Filmas == "n40" || Filmas == "n40") {
+            window.location = "n40.html";
+            return false;
+}
+
+else if (Filmas == "n50" || Filmas == "n50") {
+            window.location = "n50.html";
+            return false;
+}
+
+        else {
+            alert('Tokio filmo nera!')
+        }
+
+
+    }
+
+
+function Pasirinkti() {
+
+    const n10 = document.getElementById('n102');
+    const n20 = document.getElementById('n202');
+    const n30 = document.getElementById('n302');
+    const n40 = document.getElementById('n402');
+    const n50 = document.getElementById('n502');
+
+    if( TalkToMe.selected) {
+        window.location = "n10.html";
+    }
+    else if (Meniu.selected) {
+        window.location = "n20.html";
+    }
+    else if (Pearl.selected) {
+        window.location = "n30.html";
+    }
+    else if (TheOutwaters.selected) {
+        window.location = "n40.html";
+    }
+    else if (Barbarian.selected) {
+        window.location = "n50.html";
+    }
+    else {
+        alert('Jus nepasirinkote filmo')
+    }
+
+
+
+
+}
+
+function atsijungti() {
+    window.location = "index.html";
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
